@@ -1,12 +1,12 @@
-# Este é um fluxo de trabalho básico para ajudar você a começar com o Actions
-
 name: CI
 
 # Controla quando o fluxo de trabalho será executado
 on:
+  
   # Aciona o fluxo de trabalho em eventos de push para a branch "silver"
   push:
     branches: [ "silver" ]
+  
   # Aciona o fluxo de trabalho em pull requests para a branch "gold"
   pull_request:
     branches: [ "gold" ]
@@ -36,18 +36,16 @@ jobs:
       # Executa um conjunto de comandos usando o shell dos executores
       - name: Executar um script de várias linhas
         run: |
-          echo Adicione outras ações para construir,
-          echo testar e implantar seu projeto.
-          
-          # Cria uma nova branch a partir de silver (assumindo que gold já existe)
+         
+          echo Cria uma nova branch a partir de silver (assumindo que gold já existe)
           git checkout -b gold-from-silver
           
-          # Aplica as alterações da branch silver na nova branch
+          echo Aplica as alterações da branch silver na nova branch
           git merge origin/silver
           
-          # Empurra a nova branch para o repositório remoto
+          echo Empurra a nova branch para o repositório remoto
           git push origin gold-from-silver
           
-          # Cria uma pull request
+          echo Cria uma pull request
           gh pr create --base gold --head gold-from-silver --title "Atualizar Gold a partir de Silver"
 
