@@ -38,3 +38,16 @@ jobs:
         run: |
           echo Adicione outras ações para construir,
           echo testar e implantar seu projeto.
+          
+          # Cria uma nova branch a partir de silver (assumindo que gold já existe)
+          git checkout -b gold-from-silver
+          
+          # Aplica as alterações da branch silver na nova branch
+          git merge origin/silver
+          
+          # Empurra a nova branch para o repositório remoto
+          git push origin gold-from-silver
+          
+          # Cria uma pull request
+          gh pr create --base gold --head gold-from-silver --title "Atualizar Gold a partir de Silver"
+
