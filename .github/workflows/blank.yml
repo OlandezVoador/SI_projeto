@@ -29,23 +29,20 @@ jobs:
       # Verifica o repositório em $GITHUB_WORKSPACE, para que o trabalho possa acessá-lo
       - uses: actions/checkout@v3
 
-      # Executa um único comando usando o shell dos executores
-      - name: Executar um script de uma linha
-        run: echo Olá, mundo!
 
       # Executa um conjunto de comandos usando o shell dos executores
       - name: Executar um script de várias linhas
         run: |
          
-          echo Cria uma nova branch a partir de silver (assumindo que gold já existe)
+          # Cria uma nova branch a partir de silver (assumindo que gold já existe)
           git checkout -b gold-from-silver
           
-          echo Aplica as alterações da branch silver na nova branch
+          # Aplica as alterações da branch silver na nova branch
           git merge origin/silver
           
-          echo Empurra a nova branch para o repositório remoto
+          # Empurra a nova branch para o repositório remoto
           git push origin gold-from-silver
           
-          echo Cria uma pull request
+          # Cria uma pull request
           gh pr create --base gold --head gold-from-silver --title "Atualizar Gold a partir de Silver"
 
