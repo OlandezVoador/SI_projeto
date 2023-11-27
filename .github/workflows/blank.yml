@@ -9,7 +9,10 @@ on:
   # Aciona o fluxo de trabalho em pull requests para a branch "gold"
   pull_request:
     branches: [ "gold" ]
-
+    # Permite apenas pull requests da branch "silver" para a branch "gold"
+    paths:
+      - 'silver/**'
+      
   # Permite que você execute este fluxo de trabalho manualmente na guia Actions
   workflow_dispatch:
 
