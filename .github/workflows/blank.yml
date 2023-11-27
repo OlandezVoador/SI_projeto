@@ -2,11 +2,7 @@ name: CI
 
 # Controla quando o fluxo de trabalho será executado
 on:
-  
-  # Aciona o fluxo de trabalho em eventos de push para a branch "silver"
-  push:
-    branches: [ "silver" ]
-  
+   
   # Aciona o fluxo de trabalho em pull requests para a branch "gold"
   pull_request:
     branches: [ "gold" ]
