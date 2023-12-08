@@ -1,4 +1,4 @@
-# Sistemas Inteligentes |Projeto: Classificador de filmes IMDB Dataset
+# Sistemas Inteligentes | Projeto: Classificador de filmes IMDB Dataset
 Motivador: Projeto de reviews de IMDB. Para visualizar, clique [aqui](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews/data/).
 
 **ENTREGA DIA 08/12**
